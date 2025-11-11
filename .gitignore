@@ -1,0 +1,65 @@
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Byte-compiled / optimized / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# VSCode / JetBrains
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and runtime files
+*.log
+*.pid
+*.sock
+
+# Python environment files
+*.env
+.env.local
+.env.*
+
+# Databases
+*.sqlite
+*.sqlite3
+*.db
+db_*.sqlite
+
+# Large data, models, embeddings
+/embeddings/
+/trained/
+
+# Temporary files
+*.tmp
+tmp/
+*.bak
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Archives
+*.zip
+*.tar.gz
+*.tgz
+
+# Coverage
+htmlcov/
+.coverage
+
+# Secret / keys
+secrets.json
+.secret

@@ -1,0 +1,51 @@
+Báo cáo tóm tắt
+
+I. Mục tiêu:
+Đề tài nghiên cứu khả năng vượt qua hệ thống phòng thủ WAF dựa trên AI (mô hình UniEmbed). Mục tiêu cuối cùng là tích hợp mô hình vào WAF và khảo sát các kỹ thuật bypass (obfuscation, encoding, …) để đánh giá mức độ hiệu quả của lớp phòng vệ.
+
+Quy trình (6 bước):
+1. Xây dựng dummy web chứa lỗ hổng XSS và SQLi.
+2. Kiểm thử bộ payload ban đầu trên web mẫu.
+3. Huấn luyện mô hình UniEmbed (feature fusion).
+4. Tích hợp mô hình vào dummy web để tạo WAF.
+5. Kiểm thử lại các payload trên WAF.
+6. Nghiên cứu và thực hiện các kỹ thuật bypass nhằm đánh giá khả năng né lọc của WAF.
+
+Tiến độ hiện tại:
+
+Đã hoàn thành Bước 1 và 2; đang ở giai đoạn Bước 3 (huấn luyện và đánh giá mô hình). [User input]
+
+II. Tiến độ đã hoàn thành (Bước 1 và 2)
+
+1. Xây dựng web mẫu
+Nhóm đã phát triển một ứng dụng web đăng bài blog đơn giản (dummy web). [User input] Ứng dụng này được thiết kế có mục tiêu mô phỏng hai lỗ hổng bảo mật phổ biến và có tính đại diện cao trong thực tế:
+
+- SQL Injection (SQLi): Lỗ hổng xuất hiện tại form đăng nhập (login form). [User input]
+- Cross-Site Scripting (XSS): Lỗ hổng xuất hiện tại form đăng bài và trong quy trình hiển thị bài viết. [User input, 11]
+
+2. Kiểm thử payload ban đầu
+Nhóm đã phát triển một script Python để kiểm tra các bộ dữ liệu tấn công cho XSS và SQLi. [User input]
+
+- Script này tải các bộ payload từ dataset. [User input]
+- Mỗi payload được gửi tới dummy web để đánh giá trạng thái phản hồi (response status). [User input]
+- Kết quả được tổng hợp và phân loại theo response status, xác định số payload lỗi, payload bị chặn, và payload thực thi thành công (bypass). [User input]
+- Báo cáo kết quả này là cơ sở để đánh giá mức độ dễ bị tấn công của web trước khi triển khai WAF.
+
+III. Huấn luyện UniEmbed
+Nhóm đã triển khai phương pháp UniEmbed trong một script Python để huấn luyện các mô hình Machine Learning.
+
+UniEmbed là một phương pháp tiếp cận thống nhất nhằm phát hiện đồng thời XSS và SQLi bằng cách kết hợp các kỹ thuật học máy và xử lý ngôn ngữ tự nhiên (NLP). Mấu chốt của phương pháp là feature fusion — hợp nhất nhiều dạng embedding để thu được đặc trưng toàn diện cho từng payload.
+
+Các kỹ thuật embedding nhóm sử dụng (mô phỏng theo UniEmbed) bao gồm: 
+- Word2Vec: biểu diễn ở cấp độ từ (word-level), nắm bắt mối quan hệ ngữ nghĩa giữa các từ.
+
+- Universal Sentence Encoder (USE): biểu diễn ở cấp độ câu (sentence-level), nắm bắt ngữ cảnh và cấu trúc tổng thể — hữu ích cho các payload dài, phức tạp.
+
+- FastText: cung cấp thông tin subword (n-gram ký tự), hiệu quả khi xử lý từ lạ (OOV) và các kỹ thuật làm rối/encoding mà attacker sử dụng.
+
+IV. Kế hoạch tiếp theo (Bước 4, 5, 6)
+
+Sau khi lựa chọn mô hình UniEmbed tốt nhất, nhóm sẽ thực hiện các bước tiếp theo:
+
+- Tích hợp WAF (Bước 4): Triển khai mô hình UniEmbed đã huấn luyện vào dummy web, biến hệ thống thành một WAF dựa trên AI.
+- Kiểm thử và bypass (Bước 5 & 6): Thực hiện kiểm thử toàn diện trên WAF mới. Mục tiêu chính là nghiên cứu và áp dụng các kỹ thuật vượt qua lớp phòng thủ — ví dụ: mã hóa payload (encoding), làm rối payload (obfuscation) — sao cho payload vẫn được thực thi trên ứng dụng đích.
