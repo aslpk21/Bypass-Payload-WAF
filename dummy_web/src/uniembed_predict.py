@@ -1,45 +1,49 @@
 import os
 import re
+import string
 import joblib
 import numpy as np
 from typing import List, Tuple, Dict
-
-# Thư viện cho Embeddings
 import tensorflow_hub as hub
 import tensorflow as tf
 import gensim
 import fasttext
 
-# ----------------------------------------------------------------------
-# CẤU HÌNH ĐƯỜNG DẪN - CẦN ĐIỀN ĐÚNG ĐƯỜNG DẪN CỦA BẠN
-# ----------------------------------------------------------------------
-# Các file Word2Vec và FastText pre-trained embeddings (không có trong file zip)
-# CẦN THAY THẾ BẰNG ĐƯỜNG DẪN THỰC TẾ
-# W2V_PATH = "C:/TIU/NT213/Project/embeddings/GoogleNews-vectors-negative300.bin.gz"
-# FT_PATH = "C:/TIU/NT213/Project/embeddings/cc.en.300.bin" # hoặc cc.en.300.bin.gz
+# results (2) with replace HTML tags with HTMLTAG
+# BASE_OUTPUT_DIRS = [
+#     "output_XSS_dataset1_20251115_040730",
+#     "output_SQLiV3_1_20251115_043655",
+#     "output_sqliv2_20251115_042254",
+#     "output_sqli_20251115_040928",
+# ]
 
-# Danh sách các thư mục output của 4 lần train
+#results (3) without replace HTML tags
+# BASE_OUTPUT_DIRS = [
+#     "output_XSS_dataset1_20251115_060410",
+#     "output_SQLiV3_1_20251115_063850",
+#     "output_sqliv2_20251115_062242",
+#     "output_sqli_20251115_060627",
+# ]
+
+#results (4) with merged SQL Injection dataset
 BASE_OUTPUT_DIRS = [
-    "output_XSS_dataset_new_20251110_151522",
-    "output_SQLiV3_1_20251110_154826",
-    "output_sqliv2_20251110_153311",
-    "output_sqli_20251110_151739",
+    "output_XSS_dataset1_20251115_091139",
+    "output_sqli_mergedv3_20251115_102935",
 ]
 
 # Danh sách tất cả 16 mô hình (4 models x 4 datasets)
 MODEL_CONFIGS = []
 for base_dir in BASE_OUTPUT_DIRS:
-    # Xác định phần mở rộng file
     if "XSS" in base_dir:
         ext = ".pkl"
     else:
-        ext = ".joblib" # Các mô hình SQLi dùng .joblib
+        ext = ".joblib"
 
     for model_name in ["mlp", "rf", "svm", "voting_soft"]:
     # for model_name in ["voting_soft"]:
         MODEL_CONFIGS.append({
             "name": f"{base_dir.split('_')[1]}_{model_name}",
-            "artifacts_dir": f"C:/TIU/NT213/Project/trained/{base_dir}/models",
+            "artifacts_dir": f"./results (4)/{base_dir}/models",
             "model_file": f"{model_name}{ext}"
         })
 
@@ -47,17 +51,24 @@ for base_dir in BASE_OUTPUT_DIRS:
 # 1. Text cleaning and tokenization
 # ---------------------------
 def clean_text(s: str) -> str:
-    """Clean payload text: giữ lại các ký tự quan trọng cho XSS/SQLi."""
+    """
+    Tối ưu hóa tiền xử lý payload:
+    1. Loại bỏ các ký tự không in được (non-printable) và ký tự điều khiển.
+    2. Chuẩn hóa khoảng trắng và chuyển về chữ thường.
+    """
     if s is None:
         return ""
-    # Loại bỏ HTML tags (vì chúng ta dùng FastText/W2V/USE, không cần tags)
-    s = re.sub(r"<[^>]+>", " ", s)
-    # Giữ lại các ký tự quan trọng: ( ) ' " ; = & | ! ? + * % - _ @ \
-    # Loại bỏ các ký tự không phải là payload (ví dụ: các ký tự điều khiển)
+    
+    # 1. Loại bỏ các ký tự không in được (non-printable) và ký tự điều khiển
+    # Giữ lại tất cả các ký tự in được trong bảng mã ASCII
+    s = ''.join(filter(lambda x: x in string.printable, s))
+    
+    # 2. Loại bỏ ký tự xuống dòng và tab (đã được xử lý một phần bởi string.printable, nhưng làm lại để đảm bảo)
     s = re.sub(r"[\r\n\t]", " ", s)
-    # Chỉ giữ lại các ký tự chữ cái, số, và các ký tự đặc biệt quan trọng
-    s = re.sub(r"[^a-zA-Z0-9()'"";=&|!?+*%\-_@\\|\s]", " ", s) 
+    
+    # 3. Chuẩn hóa khoảng trắng và chuyển về chữ thường
     s = re.sub(r"\s+", " ", s).strip().lower()
+    
     return s
 
 def tokenize(s: str) -> List[str]:
@@ -69,7 +80,6 @@ def tokenize(s: str) -> List[str]:
 # ---------------------------
 # 2. Embedding functions
 # ---------------------------
-# Khởi tạo các biến toàn cục để lưu models
 global W2V_KV, FT_MODEL, USE_MODEL, LOADED_MODELS
 
 W2V_KV = None

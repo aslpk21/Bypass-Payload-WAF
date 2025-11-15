@@ -174,7 +174,7 @@ def remove_label_zero_stream(input_path, output_path, chunk_size=65536):
         enc_candidates = []
         if hint_enc:
             enc_candidates.append(hint_enc)
-        enc_candidates += ['utf-8-sig', 'utf-8', 'cp1252', 'latin1']
+        enc_candidates += ['utf-8']
 
         # parse header fields and decode to find Label index
         header_fields = parse_csv_fields_bytes(header_bytes)

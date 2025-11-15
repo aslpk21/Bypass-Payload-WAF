@@ -11,7 +11,7 @@ import logging
 import time
 
 @mod_user.route('/login', methods=['GET', 'POST'])
-# @waf_protect()
+@waf_protect(fields=["username", "password"])
 def do_login():
     session.pop('username', None)
 

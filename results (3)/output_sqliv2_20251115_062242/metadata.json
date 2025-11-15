@@ -1,0 +1,9 @@
+{
+  "dataset": "sqliv2",
+  "data_path": "/kaggle/input/nt213-uit/sqliv2.csv",
+  "test_size": 0.2,
+  "random_state": 42,
+  "timestamp": "20251115_062242",
+  "w2v_path": "/kaggle/input/nt213-uit/GoogleNews-vectors-negative300.bin",
+  "ft_path": "/kaggle/input/nt213-uit/cc.en.300.bin"
+}

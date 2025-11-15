@@ -57,8 +57,8 @@ def add_csp_headers(response):
         response.headers['Content-Security-Policy'] = csp
     return response
 
-W2V_PATH = "C:/TIU/NT213/Project/embeddings/GoogleNews-vectors-negative300.bin.gz"
-FT_PATH = "C:/TIU/NT213/Project/embeddings/cc.en.300.bin"
+W2V_PATH = "./embeddings/GoogleNews-vectors-negative300.bin.gz"
+FT_PATH = "./embeddings/cc.en.300.bin"
 
 initialize_waf(W2V_PATH, FT_PATH)
 

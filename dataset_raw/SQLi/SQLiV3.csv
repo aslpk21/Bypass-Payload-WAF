@@ -1,6 +1,6 @@
 Sentence,Label,,
 """ or pg_sleep  (  __TIME__  )  --",1,,
-create user name identified by pass123 temporary tablespace temp default tablespace users,,1,
+create user name identified by pass123 temporary tablespace temp default tablespace users,1,,
 " AND 1  =  utl_inaddr.get_host_address   (    (   SELECT DISTINCT  (  table_name  )   FROM   (  SELECT DISTINCT  (  table_name  )  , ROWNUM AS LIMIT FROM sys.all_tables  )   WHERE LIMIT  =  5   )    )    AND 'i'  =  'i",1,,
 " select * from users where id  =  '1' or @ @1  =  1 union select 1,version  (    )   -- 1'",1,,
 " select * from users where id  =  1 or 1#""  (   union select 1,version  (    )   -- 1",1,,
