@@ -31,7 +31,7 @@ BASE_OUTPUT_DIRS = [
     "output_sqli_mergedv3_20251115_102935",
 ]
 
-# Danh sách tất cả 16 mô hình (4 models x 4 datasets)
+# Danh sách tất cả 8 mô hình (4 models x 2 datasets)
 MODEL_CONFIGS = []
 for base_dir in BASE_OUTPUT_DIRS:
     if "XSS" in base_dir:
@@ -39,8 +39,8 @@ for base_dir in BASE_OUTPUT_DIRS:
     else:
         ext = ".joblib"
 
-    for model_name in ["mlp", "rf", "svm", "voting_soft"]:
-    # for model_name in ["voting_soft"]:
+    # for model_name in ["mlp", "rf", "svm", "voting_soft"]:
+    for model_name in ["voting_soft"]:
         MODEL_CONFIGS.append({
             "name": f"{base_dir.split('_')[1]}_{model_name}",
             "artifacts_dir": f"./results (4)/{base_dir}/models",
@@ -218,7 +218,7 @@ def predict_uniembed(input_string: str) -> int:
             
             if prediction == 1:
                 is_malicious = 1
-                # print(f"Phát hiện bởi: {model_set['name']}") # Dùng để debug
+                print(f"Phát hiện bởi: {model_set['name']}") # Dùng để debug
                 break 
 
         except Exception as e:
