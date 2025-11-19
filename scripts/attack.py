@@ -30,12 +30,12 @@ ENCODE_FILES = {
         'name': 'SQLi',
         'path': 'dataset_txt/SQLi/encode',
         'files': [
-            'base64.txt',
-            'decentities.txt',
-            'hexentities.txt',
-            'charencode.txt',
-            'charunicodeencode.txt',
-            'chardoubleencode.txt'
+            'base64encode.txt'
+            # 'decentities.txt',
+            # 'hexentities.txt',
+            # 'charencode.txt',
+            # 'charunicodeencode.txt',
+            # 'chardoubleencode.txt'
         ]
     }
 }
