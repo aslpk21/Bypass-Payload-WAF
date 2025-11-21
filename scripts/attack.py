@@ -15,7 +15,7 @@ PASSWORD = 'something'
 ENCODE_FILES = {
     '1': {  # XSS
         'name': 'XSS',
-        'path': 'dataset_txt/XSS',
+        'path': 'dataset_txt/XSS/encode',
         'files': [
             # 'base64.txt',
             # 'double_url_encode.txt',
@@ -24,20 +24,20 @@ ENCODE_FILES = {
             # 'js_hex.txt',
             # 'js_unicode.txt',
             # 'url_encode.txt'
-            'XSS.txt'
+            # 'XSS.txt'
         ]
     },
     '2': {  # SQLi
         'name': 'SQLi',
-        'path': 'dataset_txt/SQLi',
+        'path': 'dataset_txt/SQLi/encode',
         'files': [
-            'sqliv2.txt'
-            # 'base64encode.txt'
-            # 'decentities.txt',
-            # 'hexentities.txt',
-            # 'charencode.txt',
-            # 'charunicodeencode.txt',
-            # 'chardoubleencode.txt'
+            # 'sqliv2.txt'
+            'base64encode.txt'
+            'decentities.txt',
+            'hexentities.txt',
+            'charencode.txt',
+            'charunicodeencode.txt',
+            'chardoubleencode.txt'
         ]
     }
 }
