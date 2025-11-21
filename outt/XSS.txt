@@ -1,0 +1,49 @@
+================================================================================
+File: XSS.txt - Summary
+================================================================================
+Total Tested: 7373
+Bypassed: 37
+Blocked: 7336
+Bypass Rate: 0.50%
+================================================================================
+
+BYPASSED PAYLOADS:
+--------------------------------------------------------------------------------
+
+"<div onkeyup=""alert(1)"" contenteditable>test</div>"
+"<div onmouseleave=""alert(1)"">test</div>"
+"<p onmousedown=""alert(1)"">test</p>"
+"<span onmousedown=""alert(1)"">test</span>"
+"<span ondblclick=""alert(1)"">test</span>"
+"<div onmouseout=""alert(1)"">test</div>"
+"<div ondblclick=""alert(1)"">test</div>"
+"<A HREF=""//www.google.com/""></A>"
+"<ul onkeydown=""alert(1)"" contenteditable>test</ul>"
+"<span onmouseup=""alert(1)"">test</span>"
+"<EMBED SRC=""data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dH A6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hs aW5rIiB2ZXJzaW9uPSIxLjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxOTQiIGhlaWdodD0iMjAw IiBpZD0ieHNzIj48c2NyaXB0IHR5cGU9InRleHQvZWNtYXNjcmlwdCI+YWxlcnQoIlh TUyIpOzwvc2NyaXB0Pjwvc3ZnPg=="" type=""image/svg+xml"" AllowScriptAccess=""always""></EMBED>"
+"<span onmouseover=""alert(1)"">test</span>"
+"<div onmouseover=""alert(1)"">test</div>"
+"<div onmouseup=""alert(1)"">test</div>"
+"<span onkeydown=""alert(1)"" contenteditable>test</span>"
+"<span oncopy=""alert(1)"" contenteditable>test</span>"
+"<A HREF=""http://0x42.0x0000066.0x7.0x93/""></A>"
+<svg><animate onrepeat=alert(1) attributeName=x dur=1s repeatCount=2 />
+"<div onmouseenter=""alert(1)"">test</div>"
+"<A HREF=""//google""></A>"
+"<div onpaste=""alert(1)"" contenteditable>test</div>"
+"<li onmouseover=""alert(1)"">test</li>"
+"<div onmousemove=""alert(1)"">test</div>"
+"<div onclick=""alert(1)"">test</div>"
+"<span onmouseleave=""alert(1)"">test</span>"
+"<span draggable=""true"" ondragleave=""alert(1)"">test</span>"
+"<A HREF=""http://%77%77%77%2E%67%6F%6F%67%6C%65%2E%63%6F%6D""></A>"
+"<span onkeyup=""alert(1)"" contenteditable>test</span>"
+"<span draggable=""true"" ondragstart=""alert(1)"">test</span>"
+"<span onpaste=""alert(1)"" contenteditable>test</span>"
+"<A HREF=""http://0102.0146.0007.00000223/""></A>"
+"<A HREF=""http://google:ha.ckers.org""></A>"
+"<div oncontextmenu=""alert(1)"">test</div>"
+"<span onmouseout=""alert(1)"">test</span>"
+"<span onmouseenter=""alert(1)"">test</span>"
+"<a onmouseenter=""alert(1)"">test</a>"
+"<DIV STYLE=""background-image:\0075\0072\006C\0028'\006a\0061\0076\0061\0073\0063\0072\0069\0070\0074\003a\0061\006c\0065\0072\0074\0028.1027\0058.1053\0053\0027\0029'\0029"">"
