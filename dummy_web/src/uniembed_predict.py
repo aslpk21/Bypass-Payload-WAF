@@ -139,7 +139,7 @@ def load_models(w2v_path: str, ft_path: str):
     
     # Tải Universal Sentence Encoder (USE)
     tf.compat.v1.enable_eager_execution()
-    USE_MODEL = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
+    USE_MODEL = hub.load("./embeddings/use/")
     print("[WAF] Đã tải Universal Sentence Encoder.")
 
     # Tải Word2Vec
