@@ -25,9 +25,8 @@ def post(username, text):
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 
-    rows = c.execute("INSERT INTO posts (username, text, date) VALUES (?, ?, DateTime('now'))", (username, text)) #WHERE username = ?", (username,)).fetchall()
+    c.execute("INSERT INTO posts (username, text, date) VALUES (?, ?, DateTime('now'))", (username, text))
+    post_id = c.lastrowid
     conn.commit()
 
-    return True
-
-
+    return post_id

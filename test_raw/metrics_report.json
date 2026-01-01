@@ -1,0 +1,53 @@
+{
+  "test_info": {
+    "attack_type": "SQLi",
+    "target_url": "http://127.0.1.1:5000/user/login",
+    "start_time": "2026-01-01T10:40:55.160626",
+    "end_time": "2026-01-01T10:44:29.947470",
+    "total_duration_seconds": 214.786844
+  },
+  "results": {
+    "total_tested": 11650,
+    "total_bypassed": 11644,
+    "total_blocked": 6,
+    "total_executed": 20,
+    "bypass_rate_percent": 99.94849785407726,
+    "execution_rate_percent": 0.17167381974248927
+  },
+  "performance_metrics": {
+    "throughput_rps": 54.239821131689055,
+    "all_requests": {
+      "count": 11644,
+      "mean": 13.11692421848266,
+      "median": 7.3671999998623505,
+      "std_dev": 52.48578619160631,
+      "min": 4.374600000119244,
+      "max": 4098.18389999964,
+      "p50": 7.369399999333837,
+      "p90": 27.933999999731896,
+      "p99": 31.690999999227643
+    },
+    "blocked_requests": {
+      "count": 0,
+      "mean": 0,
+      "median": 0,
+      "std_dev": 0,
+      "min": 0,
+      "max": 0,
+      "p50": 0,
+      "p90": 0,
+      "p99": 0
+    },
+    "bypassed_requests": {
+      "count": 11644,
+      "mean": 13.11692421848266,
+      "median": 7.3671999998623505,
+      "std_dev": 52.48578619160631,
+      "min": 4.374600000119244,
+      "max": 4098.18389999964,
+      "p50": 7.369399999333837,
+      "p90": 27.933999999731896,
+      "p99": 31.690999999227643
+    }
+  }
+}

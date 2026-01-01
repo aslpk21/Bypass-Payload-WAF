@@ -16,65 +16,71 @@ def do_login():
     session.pop('username', None)
 
     if request.method == 'POST':
-        username = request.form.get('username', '')
-        password = request.form.get('password', '')
+        username_original = request.form.get('username', '')
+        password_original = request.form.get('password', '')
         otp = request.form.get('otp', '')
+        
+        # Decode the payload AFTER WAF check for execution evaluation
+        from decode_middleware import decode_all, DECODE_ENABLED
+        if DECODE_ENABLED:
+            username = decode_all(username_original)
+            password = decode_all(password_original)
+            if username != username_original:
+                print(f"[DECODE] SQLi username: '{username_original[:50]}...' -> '{username[:50]}...'")
+            if password != password_original:
+                print(f"[DECODE] SQLi password: '{password_original[:30]}...' -> '{password[:30]}...'")
+        else:
+            username = username_original
+            password = password_original
 
-        start_time = time.time()
-        sql_executed = False
-        query_result_count = 0
+        login_result = None
         
         try:
-            # Attempt login
+            # Attempt login - returns LoginResult object
             login_result = libuser.login(username, password)
-            sql_executed = True
-            
-            # Nếu libuser.login trả về info về query
-            if hasattr(login_result, 'query_info'):
-                query_result_count = login_result.query_info.get('row_count', 0)
                 
         except Exception as e:
-            query_time = time.time() - start_time
             flash("System error occurred")
             response = make_response(render_template('user.login.mfa.html'), 500)
-            response.headers['X-Login-Status'] = 'SQL_ERROR'
-            response.headers['X-Error-Type'] = type(e).__name__
-            response.headers['X-Query-Time'] = f"{query_time:.4f}"
+            response.headers['X-SQLi-Success'] = 'false'
+            response.headers['X-Rows-Returned'] = '0'
             return response
 
-        query_time = time.time() - start_time
+        # Simple SQLi indicator function
+        def add_sqli_headers(resp):
+            if login_result:
+                resp.headers['X-Rows-Returned'] = str(login_result.rows_returned)
+                # SQLi Success = login succeeded (bypass) OR rows returned > 0
+                if login_result.success:
+                    resp.headers['X-SQLi-Success'] = 'true'
+                    resp.headers['X-Bypassed-User'] = str(login_result.username)
+                elif login_result.rows_returned > 0:
+                    resp.headers['X-SQLi-Success'] = 'partial'  # Got data but no login
+                else:
+                    resp.headers['X-SQLi-Success'] = 'false'
+            return resp
         
-        if not login_result:
+        if not login_result or not login_result.success:
             flash("Invalid user or password")
             response = make_response(render_template('user.login.mfa.html'), 401)
-            response.headers['X-Login-Status'] = 'INVALID_CREDENTIALS'
-            response.headers['X-Query-Time'] = f"{query_time:.4f}"
-            response.headers['X-SQL-Executed'] = 'true' if sql_executed else 'false'
-            response.headers['X-Result-Count'] = str(query_result_count)
-            return response
+            return add_sqli_headers(response)
 
         # MFA check
-        if libmfa.mfa_is_enabled(login_result):
+        if libmfa.mfa_is_enabled(str(login_result)):
             if not otp:
                 flash("OTP required")
                 response = make_response(render_template('user.login.mfa.html'), 403)
-                response.headers['X-Login-Status'] = 'MFA_REQUIRED'
-                response.headers['X-Query-Time'] = f"{query_time:.4f}"
-                return response
+                return add_sqli_headers(response)
             
-            if not libmfa.mfa_validate(login_result, otp):
+            if not libmfa.mfa_validate(str(login_result), otp):
                 flash("Invalid OTP")
                 response = make_response(render_template('user.login.mfa.html'), 403)
-                response.headers['X-Login-Status'] = 'INVALID_OTP'
-                response.headers['X-Query-Time'] = f"{query_time:.4f}"
-                return response
+                return add_sqli_headers(response)
 
-        # Success
+        # Success - Login bypassed!
         response = make_response(redirect('/'), 302)
-        response = libsession.create(response=response, username=login_result)
-        response.headers['X-Login-Status'] = 'SUCCESS'
-        response.headers['X-Query-Time'] = f"{query_time:.4f}"
-        return response
+        response = libsession.create(response=response, username=str(login_result))
+        return add_sqli_headers(response)
 
     return render_template('user.login.mfa.html')
 

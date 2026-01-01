@@ -63,3 +63,6 @@ htmlcov/
 # Secret / keys
 secrets.json
 .secret
+
+giuaki.txt
+r.txt

